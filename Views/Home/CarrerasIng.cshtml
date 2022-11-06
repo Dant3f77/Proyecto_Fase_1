@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Proyecto_Fase_1.Models.Carreras>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CarrerasIng</title>
+</head>
+<body>
+    @foreach (var carrera in Model)
+    {
+        <p> @carrera.Carrera</p>
+        <p> Escuela: @carrera.escuela</p>
+        <p> @carrera.Asignaturas Materias</p>
+        <p> @carrera.Duracion</p>
+        <p> @carrera.Descripcion</p>
+        <hr />
+    }
+</body>
+</html>

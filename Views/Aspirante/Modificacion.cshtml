@@ -1,0 +1,47 @@
+﻿@model Proyecto_Fase_1.Models.Inscripcion
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificacion</title>
+</head>
+<body>
+    <div>
+        <form method="post" action="/Aspirante/Modificacion">
+            Id Aspirante:
+            <input type="text" name="Id" value="@Model.id" readonly />
+            <br />
+            Nombres:
+            <input type="text" name="Nombres" value="@Model.nombres" />
+            <br />
+            Primer Apellido:
+            <input type="text" name="ApellidoP" value="@Model.apellidoP" />
+            <br />
+            Segundo Apellido:
+            <input type="text" name="ApellidoS" value="@Model.apellidoS" />
+            <br />
+            DUI:
+            <input type="text" name="Dui" value="@Model.dui" />
+            <br />
+            NIT:
+            <input type="text" name="Nit" value="@Model.nit" />
+            <br />
+            Correo:
+            <input type="text" name="Correo" value="@Model.correo" />
+            <br />
+            Telefono:
+            <input type="text" name="Telefono" value="@Model.telefono" />
+            <br />
+            Carrera:
+            <input type="text" name="IdCarrera" value="@Model.idCarrera" />
+            <br />
+            <input type="submit" value="Confirmar" />
+        </form>
+    </div>
+</body>
+</html>
