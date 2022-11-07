@@ -10,6 +10,7 @@ namespace Proyecto_Fase_1.Controllers
     public class AspiranteController : Controller
     {
         MantenimientoAspirante ma;
+        MantenimientoCarreraIng mc;
         // GET: Aspirante
         public ActionResult Listar()
         {
@@ -21,7 +22,8 @@ namespace Proyecto_Fase_1.Controllers
         }
         public ActionResult Alta()
         {
-            return View();
+            mc = new MantenimientoCarreraIng();
+            return View(mc.MostrarCarreras());
         }
 
         [HttpPost]

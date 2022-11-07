@@ -40,7 +40,7 @@ namespace Proyecto_Fase_1.Models
 
         }
 
-        public List<Carreras> RecuperarTodos(string escuela)
+        public List<Carreras> RecuperarByEscuela(string escuela)
         {
             Conectar();
             List<Carreras> Table_Ing = new List<Carreras>();
@@ -67,6 +67,37 @@ namespace Proyecto_Fase_1.Models
             catch {Table_Ing = null; }
             return Table_Ing;
             
+
+        }
+
+        public List<Carreras> MostrarCarreras()
+        {
+            Conectar();
+            List<Carreras> Table_Ing = new List<Carreras>();
+            try
+            {
+                SqlCommand com = new SqlCommand("select * from Table_Carrera", con);
+                con.Open();
+                SqlDataReader registros = com.ExecuteReader();
+                while (registros.Read())
+                {
+                    Carreras carr = new Carreras()
+                    {
+                        Id = int.Parse(registros["Id"].ToString()),
+                        Carrera = registros["Carrera"].ToString(),
+                        escuela = registros["Escuela"].ToString(),
+                        Asignaturas = int.Parse(registros["Asignatura"].ToString()),
+                        Duracion = registros["Duracion"].ToString(),
+                        Descripcion = registros["Descripcion"].ToString()
+                    };
+                    Table_Ing.Add(carr);
+
+                }
+                con.Close();
+            }
+            catch { Table_Ing = null; }
+            return Table_Ing;
+
 
         }
     }

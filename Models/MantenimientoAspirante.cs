@@ -23,7 +23,7 @@ namespace Proyecto_Fase_1.Models
         public int Alta(Inscripcion Carr)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("insert into Table_Aspirante(Nombres,ApellidoP,ApellidoS,Dui,Nit,Correo,Telefono,IdCarrera) values(@Nombres,@ApellidoP,@ApellidoS,@Dui,@Nit,@Correo,@Telefono,@IdCarrera)", con);
+            SqlCommand comando = new SqlCommand("insert into Table_Aspirante(Nombres,ApellidoP,ApellidoS,Dui,Nit,Correo,Telefono,idCarrera) values(@Nombres,@ApellidoP,@ApellidoS,@Dui,@Nit,@Correo,@Telefono,@IdCarrera)", con);
             comando.Parameters.Add("@Nombres", SqlDbType.VarChar);
             comando.Parameters.Add("@ApellidoP", SqlDbType.VarChar);
             comando.Parameters.Add("@ApellidoS", SqlDbType.VarChar);
@@ -53,14 +53,14 @@ namespace Proyecto_Fase_1.Models
             List<Inscripcion> Table_Aspirante = new List<Inscripcion>();
             try
             {
-                SqlCommand com = new SqlCommand("select * from Table_aspirante", con);
+                SqlCommand com = new SqlCommand("SELECT Table_Aspirante.id, nombres, apellidop, apellidos,dui, nit, telefono,correo, idCarrera, Table_Carrera.Carrera as nameCarrera from Table_Aspirante inner join Table_Carrera on Table_Carrera.Id = Table_Aspirante.IdCarrera", con);
                 con.Open();
                 SqlDataReader registros = com.ExecuteReader();
                 while (registros.Read())
                 {
                     Inscripcion carr = new Inscripcion()
                     {
-                        id= int.Parse(registros["Id"].ToString()),
+                        id = int.Parse(registros["Id"].ToString()),
                         nombres = registros["Nombres"].ToString(),
                         apellidoP = registros["ApellidoP"].ToString(),
                         apellidoS = registros["ApellidoS"].ToString(),
@@ -68,7 +68,8 @@ namespace Proyecto_Fase_1.Models
                         nit = registros["Nit"].ToString(),
                         correo = registros["Correo"].ToString(),
                         telefono = registros["Telefono"].ToString(),
-                        idCarrera = int.Parse(registros["IdCarrera"].ToString()),
+                        idCarrera = int.Parse(registros["idCarrera"].ToString()),
+                        nameCarreras = registros["nameCarrera"].ToString()
                         
                     };
                     Table_Aspirante.Add(carr);
@@ -84,7 +85,7 @@ namespace Proyecto_Fase_1.Models
         public Inscripcion Recuperar(int codigo)
         {
             Conectar();
-            SqlCommand comando = new SqlCommand("select Id,Nombres,ApellidoP,ApellidoS,Dui,Nit,Correo,Telefono,IdCarrera from Table_Aspirante where Id=@Id", con);
+            SqlCommand comando = new SqlCommand("SELECT Table_Aspirante.id, nombres, apellidop, apellidos,dui, nit, telefono,correo, idCarrera, Table_Carrera.Carrera as nameCarrera from Table_Aspirante inner join Table_Carrera on Table_Carrera.Id = Table_Aspirante.IdCarrera where Table_Aspirante.id=" + codigo, con);
             comando.Parameters.Add("@Id", SqlDbType.Int);
             comando.Parameters["@Id"].Value = codigo;
             con.Open();
@@ -100,7 +101,8 @@ namespace Proyecto_Fase_1.Models
                 carr.nit = registros["Nit"].ToString();
                 carr.correo = registros["Correo"].ToString();
                 carr.telefono = registros["Telefono"].ToString();
-                carr.idCarrera = int.Parse(registros["IdCarrera"].ToString());
+                carr.idCarrera = int.Parse(registros["idCarrera"].ToString());
+                carr.nameCarreras = registros["nameCarrera"].ToString();
 
             }
             con.Close();

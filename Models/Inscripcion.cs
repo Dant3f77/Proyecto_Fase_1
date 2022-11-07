@@ -18,6 +18,7 @@ namespace Proyecto_Fase_1.Models
         public string telefono { get; set; }
 
         public int idCarrera { get; set; }//esta va ser foranea key , id de la tabla carrera
+        public string nameCarreras { get; set; }
 
 
 

@@ -30,7 +30,7 @@ namespace Proyecto_Fase_1.Controllers
         public ActionResult CarrerasIng(string escuela)
         {
             MantenimientoCarreraIng mci = new MantenimientoCarreraIng();
-            return View(mci.RecuperarTodos(escuela));
+            return View(mci.RecuperarByEscuela(escuela));
 
 
         }

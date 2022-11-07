@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Proyecto_Fase_1.Models.Carreras>
 @{
     Layout = null;
 }
@@ -13,7 +13,7 @@
 <body>
     <div>
         <form method="post" action="/Aspirante/Alta">
-          
+
             Nombres:
             <input type="text" name="Nombres" />
             <br />
@@ -36,10 +36,17 @@
             <input type="text" name="Telefono" />
             <br />
             Carrera:
-            <input type="text" name="IdCarrera" />
-            <br />
-            <input type="submit" value="Agregar" />
-        </form>
+            <select name="IdCarrera">
+                @foreach (var item in Model)
+                {
+
+                    <option value='@item.Id'>@item.Carrera</option>
+
+                }
+            </select>
+                <br />
+                <input type="submit" value="Agregar" />
+            </form>
     </div>
 </body>
 </html>
