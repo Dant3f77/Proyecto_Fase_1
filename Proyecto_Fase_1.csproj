@@ -88,33 +88,35 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\alta.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\carreras.css" />
     <Content Include="css\style.css" />
     <Content Include="Global.asax" />
-    <Content Include="img\4.jpg" />
-    <Content Include="img\banner.jpg" />
-    <Content Include="img\bg.jpg" />
-    <Content Include="img\bg.png" />
-    <Content Include="img\bh.png" />
     <Content Include="img\c1.jpg" />
     <Content Include="img\c2.jpg" />
     <Content Include="img\c3.jpg" />
-    <Content Include="img\ingenieria_aeronautica.jpg" />
-    <Content Include="img\ingenieria_en_automatizacion.jpg" />
-    <Content Include="img\ingenieria_en_computacion.jpg" />
-    <Content Include="img\lap.jpg" />
-    <Content Include="img\licenciatura_en_diseno_grafico.jpg" />
-    <Content Include="img\licenciatura_en_mercadotecnia.jpg" />
-    <Content Include="img\licenciatura_en_ortesis_y_protesis.jpg" />
+    <Content Include="img\ingcompu.jpg" />
+    <Content Include="img\ingindus.jpg" />
+    <Content Include="img\ingmeca.jpg" />
+    <Content Include="img\ingtelered.jpg" />
+    <Content Include="img\licadmin.jpg" />
+    <Content Include="img\liccom.jpg" />
+    <Content Include="img\licgra.jpg" />
+    <Content Include="img\licmeca.jpg" />
     <Content Include="img\logo.png" />
-    <Content Include="img\pres.jpg" />
     <Content Include="img\profile-1.jpeg" />
     <Content Include="img\profile-2.jpeg" />
     <Content Include="img\profile-3.jpeg" />
-    <Content Include="img\robot.jpg" />
-    <Content Include="img\tecnico_en_diseno_grafico.jpg" />
-    <Content Include="img\tecnico_en_ingenieria_en_computa.jpg" />
-    <Content Include="img\tecnico_en_multimedia.jpg" />
+    <Content Include="img\tecaero.jpg" />
+    <Content Include="img\teccompu.jpg" />
+    <Content Include="img\tecdise.jpg" />
+    <Content Include="img\tecmeca.jpg" />
+    <Content Include="img\virtualingcom.jpg" />
+    <Content Include="img\virtualteccompu.jpg" />
+    <Content Include="img\virtualtecdise.jpg" />
+    <Content Include="img\virtualtecventa.jpg" />
+    <Content Include="js\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
